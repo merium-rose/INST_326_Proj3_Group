@@ -5,7 +5,7 @@ class PayReport:
         self.family_caregivers = [c for c in caregivers if c.pay_rate == 0]
 
     def calculate_pay(self, time_period_multiplier=1):
-        """Calculates pay for weekly or monthly periods."""
+        #Calculates pay for weekly and monthly periods
         report_data = []
         total_pay = 0
 
@@ -22,7 +22,7 @@ class PayReport:
         return report_data, total_pay
 
     def generate_report(self):
-        """Prints the weekly and monthly pay report."""
+        #Prints the weekly and monthly pay report
         weekly_data, total_weekly_pay = self.calculate_pay(time_period_multiplier=1)
         monthly_data, total_monthly_pay = self.calculate_pay(time_period_multiplier=4)
 
@@ -41,7 +41,7 @@ class PayReport:
         print(f"Total Monthly Pay: ${total_monthly_pay:.2f}")
 
     def generate_html_report(self):
-        """Generates an HTML report for weekly and monthly pay."""
+        #Generates an HTML report for weekly and monthly pay
         weekly_data, total_weekly_pay = self.calculate_pay(time_period_multiplier=1)
         monthly_data, total_monthly_pay = self.calculate_pay(time_period_multiplier=4)
 
